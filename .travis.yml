@@ -12,7 +12,7 @@ script:
   - cd $HOME/twrp/ && git clone https://github.com/ALGPHELLO/android_device_honor_AUM-TWRP.git device/honor/AUM
   - git clone https://github.com/TwrpBuilder/device_generic_twrpbuilder.git device/generic/twrpbuilder
   - rm -rf prebuilts/clang/host/linux-x86 && git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 prebuilts/clang/host/linux-x86 -b android-7.0.0_r21 --depth=1
-  - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery --depth=1
+  - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery -b android-8.1 --depth=1
   - |
     docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v "$(pwd):/home/twrp/:rw,z" yshalsager/lineageos:14.1 bash << EOF
     cd /home/twrp/
