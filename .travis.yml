@@ -17,7 +17,7 @@ before_script:
   - cd $HOME
   - cd omni
 script:
-  - git clone https://github.com/ALGPHELLO/android_device_honor_AUM-TWRP.git -b oreo-8.0 --depth=1
+  - git clone https://github.com/ALGPHELLO/android_device_honor_AUM-TWRP.git -b oreo-8.0 device/honor/AUM --depth=1
   - cd omni
   - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery.git -b android-8.0 bootable/recovery --depth=1
   - cd omni/device && mkdir qcom
