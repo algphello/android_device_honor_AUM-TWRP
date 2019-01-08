@@ -8,6 +8,7 @@ addons:
     update:
     - true
 before_script:
+  - sudo apt-get install openjdk-8-jre openjdk-8-jdk
   - cd $HOME && sudo apt-get install git axel -y && git clone https://github.com/ALGPHELLO/scripts.git && cd scripts && sudo bash setup/android_build_env.sh && sudo bash setup/install_android_sdk.bash
   - cd $HOME && mkdir omni
   - cd $HOME/omni
