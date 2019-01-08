@@ -12,22 +12,22 @@ before_script:
   - cd $HOME && sudo apt-get install git axel -y && git clone https://github.com/ALGPHELLO/scripts.git && cd scripts && sudo bash setup/android_build_env.sh && sudo bash setup/install_android_sdk.bash
   - cd $HOME && mkdir omni
   - cd $HOME/omni
-  - repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.0
-  - repo sync --force-sync -j16
+  - repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.0 --depth=1
+  - repo sync --force-sync -j32
   - cd $HOME
   - cd $HOME/omni
 script:
-  - git clone https://github.com/ALGPHELLO/android_device_honor_AUM-TWRP.git -b oreo-8.0
+  - git clone https://github.com/ALGPHELLO/android_device_honor_AUM-TWRP.git -b oreo-8.0 --depth=1
   - cd $HOME/omni
   - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery.git -b android-8.0 bootable/recovery --depth=1
   - cd $HOME/omni/device && mkdir qcom
   - cd qcom
-  - git clone https://github.com/TeamWin/android_device_qcom_common.git -b android-8.0 common
+  - git clone https://github.com/TeamWin/android_device_qcom_common.git -b android-8.0 common --depth=1
   - cd $HOME/omni
   - source build/envsetup.sh
   - lunch omni_AUM-userdebug
   - export ALLOW_MISSING_DEPENDENCIES=true
-  - make -j16 recoveryimage
+  - make -j32 recoveryimage
 after_success:
     - cp $HOME/omni/out/target/product/AUM/recovery.img $HOME/omni/TWRP-AUM_L29-$(date +"%Y%m%d").img
   
