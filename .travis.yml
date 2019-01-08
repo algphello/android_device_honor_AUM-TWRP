@@ -26,7 +26,7 @@ script:
   - cd $HOME/omni
   - source build/envsetup.sh
   - lunch omni_AUM-userdebug
-  - export ALLOW_MISSING_DEPENDENCIES = true
+  - export ALLOW_MISSING_DEPENDENCIES=true
   - make -j16 recoveryimage
 after_success:
     - cp $HOME/omni/out/target/product/AUM/recovery.img $HOME/omni/TWRP-AUM_L29-$(date +"%Y%m%d").img
