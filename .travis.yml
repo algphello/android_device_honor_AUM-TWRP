@@ -1,7 +1,7 @@
 sudo: required
 
 before_script:
-  - cd $HOME && sudo apt-get install git axel -y && git clone https://github.com/akhilnarang/scripts.git && cd scripts && sudo bash setup /android_build_env.sh && sudo bash setup /install_android_sdk.bash
+  - cd $HOME && sudo apt-get install git axel -y && git clone https://github.com/akhilnarang/scripts.git && cd scripts && sudo bash setup/android_build_env.sh && sudo bash setup/install_android_sdk.bash
   - cd $HOME && mkdir /omni
   - cd $HOME/omni
   - repo init -u git: //github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.0
