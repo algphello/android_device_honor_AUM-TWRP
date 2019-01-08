@@ -1,5 +1,12 @@
+dist: xenial
 sudo: required
+git:
+  depth: 3
 
+addons:
+  apt:
+    update:
+    - true
 before_script:
   - cd $HOME && sudo apt-get install git axel -y && git clone https://github.com/akhilnarang/scripts.git && cd scripts && sudo bash setup/android_build_env.sh && sudo bash setup/install_android_sdk.bash
   - cd $HOME && mkdir /omni
